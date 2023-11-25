@@ -28,7 +28,20 @@ int main(){
     
     (van) ? cout << "Es simetrica" << "\n" : cout << "No es simetrica" << "\n";
 
+    bool van = true;
+    REP(i,0, matriz.size()) {
+        REP(j,0,matriz.size()) {
+            if ( matriz[i][j]) {
+                REP(k,0,matriz.size()) {
+                    if ( matriz[j][k] && !matriz[i][k]) {
+                        van = false;
+                    }
+                }
+            }
+        }  
+    }
 
+    cout << (van ? "Es transitiva" : "No es transitiva") << endl;
 
 
     return 0;
